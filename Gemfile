@@ -30,8 +30,7 @@ gem 'cocoon', '~> 1.2', '>= 1.2.9'
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.1'
 # The official AWS SDK for Ruby. File upload storage on Amazon
-gem 'aws-sdk', '~> 2.3', '>= 2.3.4'
-
+gem 'aws-sdk'
 
 
 group :development, :test do
