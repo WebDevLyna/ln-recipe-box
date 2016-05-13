@@ -1,4 +1,6 @@
 class Recipe < ActiveRecord::Base
+  # Devise
+  belongs_to :user
   # Cocoon nesting
   has_many :ingredients
   has_many :directions

@@ -29,6 +29,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 # Ingredients and Directions, nested forms in jQuery
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 4.1'
 
 
 
