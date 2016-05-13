@@ -7850,3 +7850,731 @@ Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-05-13 13:55:42 -0400
+
+
+Started GET "/recipes/34/edit" for ::1 at 2016-05-13 14:08:22 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 34]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 34]]
+  Rendered recipes/_ingredient_fields.html.haml (4.3ms)
+  [1m[35mDirection Load (0.1ms)[0m  SELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?  [["recipe_id", 34]]
+  Rendered recipes/_direction_fields.html.haml (4.1ms)
+  Rendered recipes/_form.html.haml (25.5ms)
+  Rendered recipes/edit.html.haml within layouts/application (27.2ms)
+Completed 200 OK in 56ms (Views: 54.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-13 14:08:22 -0400
+
+
+Started GET "/assets/application.self-ee090fd74fa7a7e8c84c8032c16c5ba12f16b7cfc62fe62978105237c4aaafbf.css?body=1" for ::1 at 2016-05-13 14:08:22 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-13 14:08:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-13 14:08:22 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-13 14:08:22 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-05-13 14:08:22 -0400
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-13 14:08:22 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-05-13 14:08:22 -0400
+
+
+Started GET "/recipes/new" for ::1 at 2016-05-13 14:08:23 -0400
+Processing by RecipesController#new as HTML
+  Rendered recipes/_ingredient_fields.html.haml (6.0ms)
+  Rendered recipes/_direction_fields.html.haml (4.6ms)
+  Rendered recipes/_form.html.haml (66.1ms)
+  Rendered recipes/new.html.haml within layouts/application (68.5ms)
+Completed 200 OK in 101ms (Views: 100.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2016-05-13 14:08:25 -0400
+Processing by RecipesController#new as HTML
+  Rendered recipes/_ingredient_fields.html.haml (3.2ms)
+  Rendered recipes/_direction_fields.html.haml (3.2ms)
+  Rendered recipes/_form.html.haml (22.4ms)
+  Rendered recipes/new.html.haml within layouts/application (24.8ms)
+Completed 200 OK in 56ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:08:31 -0400
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC[0m
+  Rendered recipes/index.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/34" for ::1 at 2016-05-13 14:08:32 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 34]]
+  Rendered recipes/show.html.haml within layouts/application (39.8ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `ingredient' for #<#<Class:0x007fee76702288>:0x007fee750ab548>):
+    12:       #ingredient
+    13:         %h2 Ingredients
+    14:         %ul- @recipe.ingredients.each do |ingredient|
+    15:         %li= ingredient.name
+    16: 
+    17:     .col-md-6
+    18:       #directions
+  app/views/recipes/show.html.haml:15:in `_app_views_recipes_show_html_haml__1135155898317487262_70331071287100'
+
+
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (77.6ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (79.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (175.5ms)
+
+
+Started GET "/recipes/34" for ::1 at 2016-05-13 14:08:32 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 34]]
+  Rendered recipes/show.html.haml within layouts/application (42.6ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `ingredient' for #<#<Class:0x007fee76702288>:0x007fee6bda08c0>):
+    12:       #ingredient
+    13:         %h2 Ingredients
+    14:         %ul- @recipe.ingredients.each do |ingredient|
+    15:         %li= ingredient.name
+    16: 
+    17:     .col-md-6
+    18:       #directions
+  app/views/recipes/show.html.haml:15:in `_app_views_recipes_show_html_haml__1135155898317487262_70330994184000'
+
+
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (89.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (74.7ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (169.2ms)
+
+
+Started GET "/recipes/34" for ::1 at 2016-05-13 14:08:53 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 34]]
+  Rendered recipes/show.html.haml within layouts/application (40.5ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `ingredients' for #<#<Class:0x007fee76702288>:0x007fee720601b8>):
+    12:       #ingredient
+    13:         %h2 Ingredients
+    14:         %ul- @recipe.ingredients.each do |ingredient|
+    15:         %li= ingredients.name
+    16: 
+    17:     .col-md-6
+    18:       #directions
+  app/views/recipes/show.html.haml:15:in `_app_views_recipes_show_html_haml__1135155898317487262_70331055462000'
+
+
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (77.2ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (144.4ms)
+
+
+Started GET "/recipes/34" for ::1 at 2016-05-13 14:09:02 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 34]]
+  Rendered recipes/show.html.haml within layouts/application (37.7ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `ingredient' for #<#<Class:0x007fee76702288>:0x007fee773e99b0>):
+    12:       #ingredient
+    13:         %h2 Ingredients
+    14:         %ul- @recipe.ingredients.each do |ingredient|
+    15:         %li= ingredient.name
+    16: 
+    17:     .col-md-6
+    18:       #directions
+  app/views/recipes/show.html.haml:15:in `_app_views_recipes_show_html_haml__1135155898317487262_70331089755040'
+
+
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (86.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (77.1ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (167.0ms)
+
+
+Started GET "/recipes/34" for ::1 at 2016-05-13 14:09:56 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 34]]
+  Rendered recipes/show.html.haml within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (Inconsistent indentation: 6 spaces used for indentation, but the rest of the document was indented using 1 tab.):
+    27: 
+    28: 	.row
+    29: 		.col-md-12
+    30:       -# -# Image_tag renders the image after upload using paperclip
+    31:       -# = image_tag @recipe.image.url(:medium, class: "recipe_image")
+    32:       -# %h1= @recipe.title
+    33:       -# %p= @recipe.description
+  app/views/recipes/show.html.haml:30
+
+
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (85.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (69.6ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (154.3ms)
+
+
+Started GET "/recipes/34" for ::1 at 2016-05-13 14:10:02 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 34]]
+  Rendered recipes/show.html.haml within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `user' for #<Recipe:0x007fee6cc492a0>
+Did you mean?  user_id):
+     8: 				%p.description= @recipe.description
+     9: 				%p
+    10: 					Submitted by
+    11: 					= @recipe.user.email
+    12: 
+    13: 	.row
+    14: 		.col-md-6
+  app/views/recipes/show.html.haml:11:in `_app_views_recipes_show_html_haml__1135155898317487262_70331001866600'
+
+
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (146.6ms)
+
+
+Started GET "/recipes/34" for ::1 at 2016-05-13 14:10:23 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 34]]
+  Rendered recipes/show.html.haml within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `user' for #<Recipe:0x007fee763324a0>
+Did you mean?  user_id):
+     8: 				%p.description= @recipe.description
+     9: 				%p
+    10: 					Submitted by
+    11: 					= @recipe.user.email
+    12: 
+    13: 	.row
+    14: 		.col-md-6
+  app/views/recipes/show.html.haml:11:in `_app_views_recipes_show_html_haml__1135155898317487262_70331081000120'
+
+
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (90.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (68.8ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (156.9ms)
+
+
+Started GET "/recipes/34" for ::1 at 2016-05-13 14:10:32 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 34]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?  [["recipe_id", 34]]
+  [1m[36mDirection Load (0.1ms)[0m  [1mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?[0m  [["recipe_id", 34]]
+  Rendered recipes/show.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 36ms (Views: 34.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-13 14:10:32 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-13 14:10:32 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-05-13 14:10:32 -0400
+
+
+Started GET "/assets/application.self-ee090fd74fa7a7e8c84c8032c16c5ba12f16b7cfc62fe62978105237c4aaafbf.css?body=1" for ::1 at 2016-05-13 14:10:32 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-13 14:10:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-13 14:10:32 -0400
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-13 14:10:32 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-05-13 14:10:32 -0400
+
+
+Started GET "/recipes/new" for ::1 at 2016-05-13 14:10:37 -0400
+Processing by RecipesController#new as HTML
+  Rendered recipes/_ingredient_fields.html.haml (3.0ms)
+  Rendered recipes/_direction_fields.html.haml (3.4ms)
+  Rendered recipes/_form.html.haml (22.5ms)
+  Rendered recipes/new.html.haml within layouts/application (25.1ms)
+Completed 200 OK in 57ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:10:38 -0400
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC
+  Rendered recipes/index.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/new" for ::1 at 2016-05-13 14:10:40 -0400
+Processing by RecipesController#new as HTML
+  Rendered recipes/_ingredient_fields.html.haml (3.2ms)
+  Rendered recipes/_direction_fields.html.haml (3.3ms)
+  Rendered recipes/_form.html.haml (22.6ms)
+  Rendered recipes/new.html.haml within layouts/application (25.0ms)
+Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/new" for ::1 at 2016-05-13 14:11:03 -0400
+Processing by RecipesController#new as HTML
+  Rendered recipes/_ingredient_fields.html.haml (3.5ms)
+  Rendered recipes/_direction_fields.html.haml (3.3ms)
+  Rendered recipes/_form.html.haml (21.8ms)
+  Rendered recipes/new.html.haml within layouts/application (24.5ms)
+Completed 200 OK in 57ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-13 14:11:04 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-13 14:11:04 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-13 14:11:04 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-13 14:11:04 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-05-13 14:11:04 -0400
+
+
+Started GET "/assets/application.self-ee090fd74fa7a7e8c84c8032c16c5ba12f16b7cfc62fe62978105237c4aaafbf.css?body=1" for ::1 at 2016-05-13 14:11:04 -0400
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-13 14:11:04 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-05-13 14:11:04 -0400
+
+
+Started GET "/" for ::1 at 2016-05-13 14:11:06 -0400
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC[0m
+  Rendered recipes/index.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:24:03 -0400
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC
+  Rendered recipes/index.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-13 14:24:03 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-05-13 14:24:03 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-13 14:24:03 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-13 14:24:03 -0400
+
+
+Started GET "/assets/application.self-ee090fd74fa7a7e8c84c8032c16c5ba12f16b7cfc62fe62978105237c4aaafbf.css?body=1" for ::1 at 2016-05-13 14:24:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-13 14:24:03 -0400
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-13 14:24:03 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-05-13 14:24:03 -0400
+
+
+Started GET "/recipes/32" for ::1 at 2016-05-13 14:24:07 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mDirection Load (0.1ms)[0m  [1mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  Rendered recipes/show.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes/32/edit" for ::1 at 2016-05-13 14:24:18 -0400
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  Rendered recipes/_ingredient_fields.html.haml (3.7ms)
+  [1m[35mDirection Load (0.1ms)[0m  SELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?  [["recipe_id", 32]]
+  Rendered recipes/_direction_fields.html.haml (3.5ms)
+  Rendered recipes/_form.html.haml (24.6ms)
+  Rendered recipes/edit.html.haml within layouts/application (27.0ms)
+Completed 200 OK in 60ms (Views: 58.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/recipes/32" for ::1 at 2016-05-13 14:24:55 -0400
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ufxKqC1VcrPXL9Ys2nPBZlUwA4Cci0upEx0mRr9C2yegiEUhO7PFrogw4oczBZyTqBav2HVaS9QxgwxziojYmQ==", "recipe"=>{"title"=>"Chicken Pot Pie", "description"=>"Yum", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fee77001730 @tempfile=#<Tempfile:/var/folders/m2/rbtp0d0x54d0pv2b_0hq8snh0000gn/T/RackMultipart20160513-16308-1ngd3um.jpg>, @original_filename="Chicken-Pot-Pie_643x600.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"recipe[image]\"; filename=\"Chicken-Pot-Pie_643x600.jpg\"\r\nContent-Type: image/jpeg\r\n">, "ingredients_attributes"=>{"1463163862826"=>{"name"=>"Chicken", "_destroy"=>"false"}, "1463163862832"=>{"name"=>"Flour", "_destroy"=>"false"}, "1463163862836"=>{"name"=>"Carrots", "_destroy"=>"false"}, "1463163872640"=>{"name"=>"", "_destroy"=>"false"}, "1463163872642"=>{"name"=>"", "_destroy"=>"false"}, "1463163872645"=>{"name"=>"", "_destroy"=>"false"}}, "directions_attributes"=>{"1463163874775"=>{"step"=>"Cook chicken", "_destroy"=>"false"}, "1463163874777"=>{"step"=>"Mix ingredients", "_destroy"=>"false"}, "1463163874780"=>{"step"=>"", "_destroy"=>"false"}}}, "commit"=>"Update Recipe", "id"=>"32"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/m2/rbtp0d0x54d0pv2b_0hq8snh0000gn/T/d6c83b31fac47f72dfb021281f59d47920160513-16308-1c0ccfi.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/m2/rbtp0d0x54d0pv2b_0hq8snh0000gn/T/d6c83b31fac47f72dfb021281f59d47920160513-16308-6dlxf.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/m2/rbtp0d0x54d0pv2b_0hq8snh0000gn/T/d6c83b31fac47f72dfb021281f59d47920160513-16308-6dlxf.jpg[0]'
+Command :: convert '/var/folders/m2/rbtp0d0x54d0pv2b_0hq8snh0000gn/T/d6c83b31fac47f72dfb021281f59d47920160513-16308-6dlxf.jpg[0]' -auto-orient -resize "x400" -crop "400x400+14+0" +repage '/var/folders/m2/rbtp0d0x54d0pv2b_0hq8snh0000gn/T/1b1e5611a23bb44185bac9a6dbf91df520160513-16308-zyt46x'
+Command :: file -b --mime '/var/folders/m2/rbtp0d0x54d0pv2b_0hq8snh0000gn/T/d6c83b31fac47f72dfb021281f59d47920160513-16308-1s5jtsp.jpg'
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "recipes" SET "description" = ?, "image_updated_at" = ?, "image_file_name" = ?, "updated_at" = ? WHERE "recipes"."id" = ?[0m  [["description", "Yum"], ["image_updated_at", "2016-05-13 18:24:55.031184"], ["image_file_name", "Chicken-Pot-Pie_643x600.jpg"], ["updated_at", "2016-05-13 18:24:55.393723"], ["id", 32]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "ingredients" ("name", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Chicken"], ["recipe_id", 32], ["created_at", "2016-05-13 18:24:55.397286"], ["updated_at", "2016-05-13 18:24:55.397286"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "ingredients" ("name", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Flour"], ["recipe_id", 32], ["created_at", "2016-05-13 18:24:55.398652"], ["updated_at", "2016-05-13 18:24:55.398652"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "ingredients" ("name", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Carrots"], ["recipe_id", 32], ["created_at", "2016-05-13 18:24:55.399472"], ["updated_at", "2016-05-13 18:24:55.399472"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "directions" ("step", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["step", "Cook chicken"], ["recipe_id", 32], ["created_at", "2016-05-13 18:24:55.400347"], ["updated_at", "2016-05-13 18:24:55.400347"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "directions" ("step", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["step", "Mix ingredients"], ["recipe_id", 32], ["created_at", "2016-05-13 18:24:55.401259"], ["updated_at", "2016-05-13 18:24:55.401259"]]
+[paperclip] deleting /Users/SweetNAMese/Desktop/Web Development/wd practice/recipe-box/public/system/recipes/images/000/000/032/original/Chicken-Pot-Pie_643x600.jpg
+[paperclip] deleting /Users/SweetNAMese/Desktop/Web Development/wd practice/recipe-box/public/system/recipes/images/000/000/032/medium/Chicken-Pot-Pie_643x600.jpg
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/32
+Completed 302 Found in 403ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/recipes/32" for ::1 at 2016-05-13 14:24:55 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  [1m[35mDirection Load (0.1ms)[0m  SELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?  [["recipe_id", 32]]
+  Rendered recipes/show.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:24:57 -0400
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC[0m
+  Rendered recipes/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/33" for ::1 at 2016-05-13 14:24:59 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 33]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 33]]
+  [1m[35mDirection Load (0.1ms)[0m  SELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?  [["recipe_id", 33]]
+  Rendered recipes/show.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/recipes/33" for ::1 at 2016-05-13 14:25:03 -0400
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FVOacerh+o27omgG6PqaBGBXS81M08EN2tSOOY2XMFcMJ5X4/AdNkOS9XK0BjMfxnXHnlaUCwXD4SqQMuF0z6Q==", "id"=>"33"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 33]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 33]]
+  [1m[35m (2.8ms)[0m  commit transaction
+[paperclip] deleting /Users/SweetNAMese/Desktop/Web Development/wd practice/recipe-box/public/system/recipes/images/000/000/033/original/Spring-Rolls_153.jpg
+[paperclip] deleting /Users/SweetNAMese/Desktop/Web Development/wd practice/recipe-box/public/system/recipes/images/000/000/033/medium/Spring-Rolls_153.jpg
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:25:03 -0400
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC[0m
+  Rendered recipes/index.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:25:04 -0400
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC
+  Rendered recipes/index.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/recipes/34" for ::1 at 2016-05-13 14:25:06 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 34]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?  [["recipe_id", 34]]
+  [1m[36mDirection Load (0.1ms)[0m  [1mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?[0m  [["recipe_id", 34]]
+  Rendered recipes/show.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/recipes/34" for ::1 at 2016-05-13 14:25:10 -0400
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Q/UyPPYeXLEkKdr0GeUoPxUqQb3qUGEy5DvkscoQqVdagT214PjrrHs27l/wk3XK6Azt5QOBYU/Gpc6E/9qq6Q==", "id"=>"34"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 34]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "recipes" WHERE "recipes"."id" = ?  [["id", 34]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+[paperclip] deleting /Users/SweetNAMese/Desktop/Web Development/wd practice/recipe-box/public/system/recipes/images/000/000/034/original/spaghetti.jpg
+[paperclip] deleting /Users/SweetNAMese/Desktop/Web Development/wd practice/recipe-box/public/system/recipes/images/000/000/034/medium/spaghetti.jpg
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:25:10 -0400
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC
+  Rendered recipes/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:25:11 -0400
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC[0m
+  Rendered recipes/index.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:25:51 -0400
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC
+  Rendered recipes/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 1795ms (Views: 1794.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-2da10d0922ea76646e7771d3dc93571eb2954d686d60c74052ae7676ef6003f3.css?body=1" for ::1 at 2016-05-13 14:25:53 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-13 14:25:53 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-05-13 14:25:53 -0400
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-13 14:25:53 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-13 14:25:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-13 14:25:53 -0400
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-13 14:25:53 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-05-13 14:25:53 -0400
+
+
+Started GET "/recipes/32" for ::1 at 2016-05-13 14:26:29 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mDirection Load (0.2ms)[0m  [1mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  Rendered recipes/show.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/32" for ::1 at 2016-05-13 14:27:44 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  [1m[35mDirection Load (0.1ms)[0m  SELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?  [["recipe_id", 32]]
+  Rendered recipes/show.html.haml within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `destroy_user_session_path' for #<#<Class:0x007fee76702288>:0x007fee72eda7e8>):
+    13: 
+    14: 			%ul.nav.navbar-nav.navbar-right
+    15: 				%li= link_to "New Recipe", new_recipe_path
+    16: 				%li= link_to "Sign Out", destroy_user_session_path, method: :delete
+    17: 
+    18: 		- flash.each do |name, msg|
+    19: 			= content_tag :div, msg, class: "alert"
+  app/views/layouts/application.html.haml:16:in `_app_views_layouts_application_html_haml___2324590381493917641_70331053442980'
+
+
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (83.7ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.6ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/SweetNAMese/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (151.1ms)
+
+
+Started GET "/recipes/32" for ::1 at 2016-05-13 14:28:13 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mDirection Load (0.1ms)[0m  [1mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  Rendered recipes/show.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-13 14:28:13 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-05-13 14:28:13 -0400
+
+
+Started GET "/assets/application.self-ee090fd74fa7a7e8c84c8032c16c5ba12f16b7cfc62fe62978105237c4aaafbf.css?body=1" for ::1 at 2016-05-13 14:28:13 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-13 14:28:13 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-13 14:28:13 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-13 14:28:13 -0400
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-13 14:28:13 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-05-13 14:28:13 -0400
+
+
+Started GET "/recipes/new" for ::1 at 2016-05-13 14:28:17 -0400
+Processing by RecipesController#new as HTML
+  Rendered recipes/_ingredient_fields.html.haml (4.3ms)
+  Rendered recipes/_direction_fields.html.haml (3.4ms)
+  Rendered recipes/_form.html.haml (26.2ms)
+  Rendered recipes/new.html.haml within layouts/application (28.5ms)
+Completed 200 OK in 62ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:28:19 -0400
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC
+  Rendered recipes/index.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:28:53 -0400
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC[0m
+  Rendered recipes/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-13 14:28:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-13 14:28:53 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-13 14:28:53 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-05-13 14:28:53 -0400
+
+
+Started GET "/assets/application.self-ee090fd74fa7a7e8c84c8032c16c5ba12f16b7cfc62fe62978105237c4aaafbf.css?body=1" for ::1 at 2016-05-13 14:28:53 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-13 14:28:53 -0400
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-13 14:28:53 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-05-13 14:28:53 -0400
+
+
+Started GET "/recipes/32" for ::1 at 2016-05-13 14:28:59 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  [1m[35mDirection Load (0.1ms)[0m  SELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = ?  [["recipe_id", 32]]
+  Rendered recipes/show.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-05-13 14:29:02 -0400
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes"  ORDER BY created_at DESC[0m
+  Rendered recipes/index.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.2ms)
