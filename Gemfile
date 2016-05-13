@@ -27,6 +27,9 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Easy upload management for ActiveRecord
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
+# Ingredients and Directions, nested forms in jQuery
+gem 'cocoon', '~> 1.2', '>= 1.2.9'
+
 
 
 group :development, :test do
